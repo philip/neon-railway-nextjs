@@ -7,7 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "seed": "npx neondb -s init.sql -e .env.local -k DATABASE_URL -p NEXT_",
+    "seed": "npx get-db -s init.sql -e .env.local -k DATABASE_URL -p NEXT_",
     "eject": "rm -rf ./src/app/demo ./init.sql"
   },
   "dependencies": {
