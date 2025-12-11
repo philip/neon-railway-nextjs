@@ -12,7 +12,7 @@ tags:
 
 This is a [Next.js](https://nextjs.org/) app that uses [Instagres](https://neon.new/) to instantly generate a claimable database for you at [Neon](https://neon.com).
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/ODieaB?referralCode=CS5lp7&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/nextjs-with-neon-postgres?referralCode=4OEw4T&utm_medium=integration&utm_source=template&utm_campaign=generic)
 
 ## Features
 
