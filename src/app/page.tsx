@@ -45,11 +45,11 @@ function Arrow() {
 
 export default function Home() {
   // Server-side logging (will appear in Railway logs)
-  const claimUrl = process.env.NEXT_NEON_LAUNCHPAD_CLAIM_URL;
+  const claimUrl = process.env.NEXT_INSTAGRES_CLAIM_URL;
   const dbUrl = process.env.DATABASE_URL;
   
   console.log('\n=== SERVER COMPONENT RENDER ===');
-  console.log('NEXT_NEON_LAUNCHPAD_CLAIM_URL:', claimUrl || 'UNDEFINED');
+  console.log('NEXT_INSTAGRES_CLAIM_URL:', claimUrl || 'UNDEFINED');
   console.log('DATABASE_URL:', dbUrl ? 'SET' : 'UNDEFINED');
   console.log('NODE_ENV:', process.env.NODE_ENV);
   console.log('================================\n');
@@ -60,7 +60,7 @@ export default function Home() {
         {/* Debug info visible in browser */}
         <div className="w-full bg-yellow-100 dark:bg-yellow-900 p-4 rounded text-xs font-mono border-2 border-yellow-400">
           <div className="font-bold mb-2">🔍 DEBUG INFO:</div>
-          <div>NEXT_NEON_LAUNCHPAD_CLAIM_URL: {claimUrl || '❌ UNDEFINED'}</div>
+          <div>NEXT_INSTAGRES_CLAIM_URL: {claimUrl || '❌ UNDEFINED'}</div>
           <div>DATABASE_URL: {dbUrl ? '✅ SET' : '❌ UNDEFINED'}</div>
           <div>href value: {claimUrl || '(empty)'}</div>
         </div>
