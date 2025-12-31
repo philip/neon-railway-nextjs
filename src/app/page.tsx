@@ -44,9 +44,27 @@ function Arrow() {
 }
 
 export default function Home() {
+  // Server-side logging (will appear in Railway logs)
+  const claimUrl = process.env.NEXT_NEON_LAUNCHPAD_CLAIM_URL;
+  const dbUrl = process.env.DATABASE_URL;
+  
+  console.log('\n=== SERVER COMPONENT RENDER ===');
+  console.log('NEXT_NEON_LAUNCHPAD_CLAIM_URL:', claimUrl || 'UNDEFINED');
+  console.log('DATABASE_URL:', dbUrl ? 'SET' : 'UNDEFINED');
+  console.log('NODE_ENV:', process.env.NODE_ENV);
+  console.log('================================\n');
+  
   return (
     <div className="font-sans grid grid-rows-[1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] items-center sm:items-start">
+        {/* Debug info visible in browser */}
+        <div className="w-full bg-yellow-100 dark:bg-yellow-900 p-4 rounded text-xs font-mono border-2 border-yellow-400">
+          <div className="font-bold mb-2">🔍 DEBUG INFO:</div>
+          <div>NEXT_NEON_LAUNCHPAD_CLAIM_URL: {claimUrl || '❌ UNDEFINED'}</div>
+          <div>DATABASE_URL: {dbUrl ? '✅ SET' : '❌ UNDEFINED'}</div>
+          <div>href value: {claimUrl || '(empty)'}</div>
+        </div>
+        
         <h1 className="flex items-center gap-2">
           <Image
             src="/instagres.svg"
@@ -65,7 +83,7 @@ export default function Home() {
         <ol className="font-mono list-inside list-decimal text-lg/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
             <a
-              href={process.env.NEXT_NEON_LAUNCHPAD_CLAIM_URL}
+              href={claimUrl}
               rel="noopener noreferrer"
               target="_blank"
               className="hover:underline hover:underline-offset-4 dark:text-blue-400 text-blue-500 font-bold"
@@ -73,6 +91,7 @@ export default function Home() {
               Claim your database
             </a>{' '}
             before it expires!
+            {!claimUrl && <span className="text-red-500 font-bold"> ⚠️ (URL is undefined!)</span>}
           </li>
           <li className="mb-2 tracking-[-.01em]">
             Build your app editing{' '}
